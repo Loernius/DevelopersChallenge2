@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio", "DesafioNibo\Desafio.csproj", "{C61D55C4-28E4-4D37-8A45-C349E82F45E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{35724986-ADF3-4E20-9811-0DD57223054D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{CF307C5A-EA2B-4592-88F7-6B4B819D092B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{D487DF93-4423-47DA-8198-68B23DAFE78F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B15AD951-9283-4188-AE10-D6B5A2050CDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{FFECCBF1-F438-43DC-9886-CA2CCFD40E5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C83CD609-09E8-4B97-AB9D-9021409A782D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bash", "bash", "{ABFADF2B-DAA7-4C3D-BA54-0B5071E68A36}"
+	ProjectSection(SolutionItems) = preProject
+		bash\add-entity.sh = bash\add-entity.sh
+		bash\migration-add.sh = bash\migration-add.sh
+		bash\migration-update.sh = bash\migration-update.sh
+		bash\restore.sh = bash\restore.sh
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Service", "DesafioNibo.Service\Desafio.Service.csproj", "{9F8FF2EE-1A52-4C25-837A-052733AAC66B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Domain", "DesafioNibo.Domain\Desafio.Domain.csproj", "{6958BA94-1EE1-4817-9CC1-8C998CC6371E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.CrossCutting", "DesafioNibo.CrossCutting\Desafio.CrossCutting.csproj", "{61B1A9F8-5545-4D26-951C-8D4B38935C26}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Database", "DesafioNibo.Database\Desafio.Database.csproj", "{CFC73F3B-4DB5-44D2-B74D-28848697A332}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C61D55C4-28E4-4D37-8A45-C349E82F45E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61D55C4-28E4-4D37-8A45-C349E82F45E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61D55C4-28E4-4D37-8A45-C349E82F45E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61D55C4-28E4-4D37-8A45-C349E82F45E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F8FF2EE-1A52-4C25-837A-052733AAC66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8FF2EE-1A52-4C25-837A-052733AAC66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8FF2EE-1A52-4C25-837A-052733AAC66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8FF2EE-1A52-4C25-837A-052733AAC66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6958BA94-1EE1-4817-9CC1-8C998CC6371E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6958BA94-1EE1-4817-9CC1-8C998CC6371E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6958BA94-1EE1-4817-9CC1-8C998CC6371E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6958BA94-1EE1-4817-9CC1-8C998CC6371E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B1A9F8-5545-4D26-951C-8D4B38935C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B1A9F8-5545-4D26-951C-8D4B38935C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B1A9F8-5545-4D26-951C-8D4B38935C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B1A9F8-5545-4D26-951C-8D4B38935C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC73F3B-4DB5-44D2-B74D-28848697A332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC73F3B-4DB5-44D2-B74D-28848697A332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC73F3B-4DB5-44D2-B74D-28848697A332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC73F3B-4DB5-44D2-B74D-28848697A332}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C61D55C4-28E4-4D37-8A45-C349E82F45E9} = {35724986-ADF3-4E20-9811-0DD57223054D}
+		{FFECCBF1-F438-43DC-9886-CA2CCFD40E5E} = {CF307C5A-EA2B-4592-88F7-6B4B819D092B}
+		{C83CD609-09E8-4B97-AB9D-9021409A782D} = {CF307C5A-EA2B-4592-88F7-6B4B819D092B}
+		{9F8FF2EE-1A52-4C25-837A-052733AAC66B} = {D487DF93-4423-47DA-8198-68B23DAFE78F}
+		{6958BA94-1EE1-4817-9CC1-8C998CC6371E} = {B15AD951-9283-4188-AE10-D6B5A2050CDD}
+		{61B1A9F8-5545-4D26-951C-8D4B38935C26} = {FFECCBF1-F438-43DC-9886-CA2CCFD40E5E}
+		{CFC73F3B-4DB5-44D2-B74D-28848697A332} = {C83CD609-09E8-4B97-AB9D-9021409A782D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED4E4C08-E05C-48AC-95F4-FF9A552BF050}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,44 @@
+﻿@page "/import"
+@using Desafio.Domain.Service
+@using Desafio.Domain.Domain
+@inject NavigationManager navigationManager
+@inject ITransactionService _transactionService
+
+<h1>Import Files</h1>
+
+<InputFile multiple OnChange="HandleChange"></InputFile>
+<BSButton OnClick="UploadFiles">Import Files</BSButton>
+@code {
+    @*This is the import controller, where it will be recieved the files and it will mount a unique file,
+        ignoring multiple entries on the same day
+
+        The service is injected by dependency injection*@
+    IFileListEntry[] files;
+    void HandleChange(IFileListEntry[] uploadFiles)
+    {
+        files = uploadFiles;
+    }
+
+    async Task UploadFiles()
+    {
+        var transactionsByFiles = new List<List<TransactionDomain>>();
+        foreach (var file in files)
+        {
+            using (var reader = new System.IO.StreamReader(file.Data))
+            {
+                var lines = new List<string>();
+                while (await reader.ReadLineAsync() != null)
+                {
+                    var text = await reader.ReadToEndAsync();
+                    lines = text.Replace("\r", "").Split("\n").ToList();
+                    @*here we are getting every line of each file and splitting into a list*@
+                }
+                transactionsByFiles.Add(_transactionService.ParseOFXData(lines));
+            }
+        }
+        var transactionList = _transactionService.BlendTransactions(transactionsByFiles);
+        _transactionService.InsertManyReturningObject(transactionList);
+        @*using a function from the base service wrapper, thanks to the archtecture template used*@
+        navigationManager.NavigateTo(""); @*lets navigate back to the list page, so we can see our transactions*@
+    }
+}

@@ -1,0 +1,63 @@
+﻿@page "/"
+@using Desafio.Domain.Domain
+@using Desafio.Domain.Service
+@using Desafio.Domain.Seletores
+@inject ITransactionService _transactionService
+<BSContainer>
+    <BSTable>
+        @*using Blazorstrap for easy and clean boostrap components*@
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Description</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date of Transaction</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (transactionList.Count == 0)
+            {
+                <tr>
+                    <td colspan="4">No transactions imported yet</td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var transaction in transactionList)
+                {
+                    <tr>
+                        <td>@transaction.type</td>
+                        <td>@transaction.memo</td>
+                        <td class="@checkDebit(transaction.type)">@transaction.amount.ToString("C").Replace("-", "")</td>
+                        <td>@transaction.date.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </BSTable>
+</BSContainer>
+
+@code {
+
+    List<TransactionDomain> transactionList;
+    protected override void OnInitialized()
+    {@*using lifecycle function to populate list variable on initialize*@
+    TransactionSeletor seletor = new TransactionSeletor();
+    @*creating a selector, another tweak from the template, it will be used to select data from the repository*@
+    transactionList = _transactionService.GetList(seletor).OrderBy(x => x.date).ToList();
+    @*populating the list with a ordered version of the database list, ascending by date. 
+        We can check the GetList function on the ServiceBase.cs file*@
+}
+
+protected string checkDebit(string type)
+{ @*little checker function to create colors for the amount column on the razor page*@
+if (type == "DEBIT")
+{
+    return "text-danger";
+}
+else
+{
+    return "text-success";
+}
+}
+}

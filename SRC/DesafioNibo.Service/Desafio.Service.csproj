@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DesafioNibo.Database\Desafio.Database.csproj" />
+    <ProjectReference Include="..\DesafioNibo.Domain\Desafio.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
