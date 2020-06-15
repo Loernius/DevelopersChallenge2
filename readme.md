@@ -8,7 +8,7 @@ The solution was developed in a blazor application utilizing the server-side ren
 
 ## Commands
 
-Firstly, is needed to install dotnet core 3.1 (here)[https://dotnet.microsoft.com/download/dotnet-core/3.1]
+Firstly, is needed to install dotnet core 3.1 [here](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 Then, you need to install dotnet-ef with the following command:
 
